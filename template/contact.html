@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="container my-5">
+    <img src="https://source.unsplash.com/1600x480/?phone" class="d-block w-100" alt="...">
+</div>
+<h3 align="center">
+    Happy to help! 
+</h3>
+<div class="container">
+<form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="name" class="form-control" id="name" name="name" aria-describedby="emailHelp">
+        <small id="name" class="form-text text-muted">Please enter your name</small>
+      </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <!--<div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password"> 
+    </div>-->
+    <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input type="phone" class="form-control" id="phone" name="phone">
+        <small id="phone" class="form-text text-muted">Please enter your phone number</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Item(s)</label>
+        <input type="item" class="form-control" id="item" name="item"> 
+        <small id="phone" class="form-text text-muted">Please enter the name of the item</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Quantity</label>
+        <input type="quantity" class="form-control" id="quantity" name="quantity"> 
+      </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}
